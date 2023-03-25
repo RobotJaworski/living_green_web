@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:lg_admin/config/config.dart';
 import 'package:lg_admin/Authentication/login.dart';
 import 'package:lg_admin/admin/bottomAndUp.dart';
+import 'package:lg_admin/admin/adminHomePage.dart';
 
 class splashScreen extends StatefulWidget {
   const splashScreen({super.key});
@@ -17,7 +18,7 @@ class _splashScreenState extends State<splashScreen> {
       if (LivingPlant.firebaseAuth!.currentUser != null) {
         Navigator.pushReplacement(
           context,
-          MaterialPageRoute(builder: (c) => const bottomAndUp()),
+          MaterialPageRoute(builder: (c) => adminHomePage()),
         );
       } else {
         Navigator.pushReplacement(

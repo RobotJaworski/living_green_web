@@ -60,6 +60,7 @@ dependencies:
   flutter_staggered_grid_view: ^0.6.2
   flutter_chat_bubble: ^2.0.0
   image_downloader: ^0.31.0
+  easy_sidemenu: ^0.4.1+1
 
 dev_dependencies:
   flutter_test:

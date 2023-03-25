@@ -41,7 +41,7 @@ class _UserLogin extends State<UserLogin> {
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Text(
-                      "Login",
+                      "Admin Login",
                       style: TextStyle(
                           color: LivingPlant.primaryColor,
                           fontWeight: FontWeight.bold,
@@ -49,54 +49,57 @@ class _UserLogin extends State<UserLogin> {
                     ),
                   ),
                   Form(
-                    child: Container(
-                      margin: const EdgeInsets.all(15),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        key: _key,
-                        children: [
-                          customTextField(
-                            textEditingController: _email,
-                            widget: const Icon(Icons.email),
-                            isSecure: false,
-                            textInputType: TextInputType.emailAddress,
-                            enabledEdit: true,
-                            hint: "Email",
-                          ),
-                          const SizedBox(
-                            height: 30,
-                          ),
-                          customTextField(
-                            textEditingController: _password,
-                            widget: GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  hidden = !hidden;
-                                  print(hidden);
-                                });
+                    child: SizedBox(
+                      width: 400,
+                      child: Container(
+                        margin: const EdgeInsets.all(15),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          key: _key,
+                          children: [
+                            customTextField(
+                              textEditingController: _email,
+                              widget: const Icon(Icons.email),
+                              isSecure: false,
+                              textInputType: TextInputType.emailAddress,
+                              enabledEdit: true,
+                              hint: "Email",
+                            ),
+                            const SizedBox(
+                              height: 30,
+                            ),
+                            customTextField(
+                              textEditingController: _password,
+                              widget: GestureDetector(
+                                onTap: () {
+                                  setState(() {
+                                    hidden = !hidden;
+                                    print(hidden);
+                                  });
+                                },
+                                child: Icon(
+                                  hidden == true
+                                      ? Icons.visibility_off
+                                      : Icons.visibility,
+                                ),
+                              ),
+                              isSecure: hidden,
+                              textInputType: TextInputType.emailAddress,
+                              enabledEdit: true,
+                              hint: "Password",
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                forgetPassword();
                               },
-                              child: Icon(
-                                hidden == true
-                                    ? Icons.visibility_off
-                                    : Icons.visibility,
+                              child: const Text(
+                                "Forget Password?",
+                                style: TextStyle(color: Colors.grey),
                               ),
                             ),
-                            isSecure: hidden,
-                            textInputType: TextInputType.emailAddress,
-                            enabledEdit: true,
-                            hint: "Password",
-                          ),
-                          TextButton(
-                            onPressed: () {
-                              forgetPassword();
-                            },
-                            child: const Text(
-                              "Forget Password?",
-                              style: TextStyle(color: Colors.grey),
-                            ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -112,7 +115,7 @@ class _UserLogin extends State<UserLogin> {
                         borderRadius: BorderRadius.circular(3),
                       ),
                       child: const Text(
-                        "Login In",
+                        "Login",
                         style: TextStyle(
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),

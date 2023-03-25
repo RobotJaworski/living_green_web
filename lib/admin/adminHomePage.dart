@@ -25,7 +25,7 @@ class _adminHomePage extends State<adminHomePage> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 4,
       child: Scaffold(
         backgroundColor: LivingPlant.primaryColor,
         drawer: adminDrawer(),
@@ -45,17 +45,42 @@ class _adminHomePage extends State<adminHomePage> {
             child: Container(
                 padding: const EdgeInsets.only(top: 30.0),
                 child: Column(
-                  children: const [
-                    TabBar(tabs: [
-                      Tab(
-                          text: "All Users",
-                          icon: Icon(
-                            Icons.directions_car,
-                            color: LivingPlant.whiteColor,
-                          )),
-                      Tab(icon: Icon(Icons.directions_transit)),
-                      Tab(icon: Icon(Icons.directions_bike)),
-                    ]),
+                  // ignore: prefer_const_literals_to_create_immutables
+                  children: [
+                    const TabBar(
+                      tabs: [
+                        Tab(
+                            text: "All Users",
+                            icon: Icon(
+                              Icons.directions_car,
+                              color: LivingPlant.whiteColor,
+                            )),
+                        Tab(
+                            text: "Expert Request",
+                            icon: Icon(Icons.directions_transit)),
+                        Tab(
+                            text: "Reported Posts",
+                            icon: Icon(Icons.directions_bike)),
+                        Tab(
+                            text: "About",
+                            icon: Icon(Icons.access_alarms_outlined)),
+                      ],
+                    ),
+                    const Expanded(
+                        child: TabBarView(children: [
+                      Center(
+                        child: allUsers(),
+                      ),
+                      Center(
+                        child: CheckExpertStatusPage(),
+                      ),
+                      Center(
+                        child: ReportedPosts(),
+                      ),
+                      Center(
+                        child: AboutUs(),
+                      )
+                    ]))
                   ],
                 )
                 // child: GridView.count(

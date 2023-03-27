@@ -52,18 +52,14 @@ class _adminHomePage extends State<adminHomePage> {
                         Tab(
                             text: "All Users",
                             icon: Icon(
-                              Icons.directions_car,
+                              Icons.diversity_3,
                               color: LivingPlant.whiteColor,
                             )),
                         Tab(
                             text: "Expert Request",
-                            icon: Icon(Icons.directions_transit)),
-                        Tab(
-                            text: "Reported Posts",
-                            icon: Icon(Icons.directions_bike)),
-                        Tab(
-                            text: "About",
-                            icon: Icon(Icons.access_alarms_outlined)),
+                            icon: Icon(Icons.how_to_reg)),
+                        Tab(text: "Reported Posts", icon: Icon(Icons.report)),
+                        Tab(text: "About", icon: Icon(Icons.info)),
                       ],
                     ),
                     const Expanded(
